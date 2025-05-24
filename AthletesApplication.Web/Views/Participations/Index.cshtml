@@ -7,6 +7,9 @@
 <h1>Index</h1>
 
 <!--TODO: Add CreateTournament button (Create method in TournamentsController)-->
+<form asp-controller="Tournaments" asp-action="Create" method="post">
+    <button class="btn btn-success">Create Tournament</button>
+</form>
 
 
 <table class="table">
@@ -39,8 +42,9 @@
                 </td>
                 <td>
                     <!--TODO: add delete button-->
-
-
+                    <form asp-action="Delete" method="post" asp-route-id="@item.Id">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
         }

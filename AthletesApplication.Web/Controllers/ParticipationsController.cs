@@ -53,7 +53,8 @@ namespace AthletesApplication.Web.Controllers
         public IActionResult Delete(Guid id)
         {
             // TODO: Implement method
-            throw new NotImplementedException();
+            _participationService.DeleteById(id);
+            return RedirectToAction(nameof(Index), "Participations");
         }
     }
 }

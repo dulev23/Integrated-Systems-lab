@@ -51,7 +51,13 @@ namespace AthletesApplication.Service.Implementation
         public Participation DeleteById(Guid id)
         {
             // TODO: Implement method
-            throw new NotImplementedException();
+            var participation = GetById(id);
+            if (participation == null)
+            {
+                throw new Exception("Participation not found");
+            }
+            _participationRepository.Delete(participation);
+            return participation;
         }
     }
 }

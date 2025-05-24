@@ -6,17 +6,61 @@
 
 <h1>Details</h1>
 
+<h4>Tournament</h4>
+
 <!-- TODO: Create Table for Tournament -->
-<!-- Look at the table from any Index page for help -->
-<!-- Iterate throught Model.AthletesInTournament -->
-<!-- Display: Athlete FullName, Athlete JerseyNumber, Athlete DateOfBirth -->
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+    </dl>
+</div>
+
+<h4>Athletes</h4>
+
 <table class="table">
-    <thead></thead>
-    <tbody></tbody>
+    <thead>
+        <tr>
+            <th>
+                Full Name
+            </th>
+
+            <th>
+                Jersey Number
+            </th>
+            <th>
+                Date of birth
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AthleteInTournaments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Athlete.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Athlete.JerseyNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Athlete.DateOfBirth)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
-
-<!--TODO: Display Total Athletes in Tournament-->
-<div>
-    <p>Total Athletes in Tournament: </p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            <strong>Total Athletes: </strong> @Model.AthleteInTournaments.Count
+        </div>
+    </div>
 </div>

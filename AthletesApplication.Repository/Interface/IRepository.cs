@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 using AthletesApplication.Domain;
 using System.Linq.Expressions;
+using AthletesApplication.Domain.DomainModels;
 
 namespace AthletesApplication.Repository.Interface
 {

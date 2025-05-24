@@ -4,6 +4,7 @@ using AthletesApplication.Domain;
 using AthletesApplication.Repository.Interface;
 using System.Linq.Expressions;
 using AthletesApplication.Repository.Data;
+using AthletesApplication.Domain.DomainModels;
 
 namespace AthletesApplication.Repository.Implementation
 {
